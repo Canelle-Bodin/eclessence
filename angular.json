@@ -30,7 +30,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "baseHref": "./",  // Ajouter baseHref pour les chemins relatifs
+            "deployUrl": "./"  // Ajouter deployUrl pour les assets
           },
           "configurations": {
             "production": {
