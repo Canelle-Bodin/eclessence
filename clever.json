@@ -1,7 +1,16 @@
 {
+  "build": {
+    "commands": [
+      "npm install",
+      "ng build --prod"
+    ]
+  },
   "deploy": {
-    "static": {
-      "root": "dist/eclessence/browser"
-    }
+    "commands": [
+      "npm run serve"
+    ]
+  },
+  "env": {
+    "GIT_URL": "https://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@github.com/Canelle-Bodin/eclessence.git"
   }
 }
