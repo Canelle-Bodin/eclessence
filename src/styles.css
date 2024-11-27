@@ -1,0 +1,15 @@
+:root {
+  --blue: #A0B8D7;
+  --pink: #E3A7D6;
+  --beige: #F5E1D0;
+  --purple: #9A8CC9;
+  --black: #333;
+  --white: #ffffff;
+  --accent-color: #9A8CC9;
+  --btn-color: #A0B8D7;
+  --btn-hover-color: #9A8CC9;
+}
+
+body{
+  margin: initial;
+}

@@ -1,0 +1,30 @@
+<div class="container-gallery">
+  <app-header></app-header>
+  <div class="parallax"></div>
+  <div class="filters">
+    <button (click)="filterGallery('all')">Tous</button>
+    <button (click)="filterGallery('texture')">Texturé</button>
+    <button (click)="filterGallery('grand')">Grand</button>
+    <button (click)="filterGallery('petit')">Petit</button>
+    <button (click)="filterGallery('moyen')">Moyen</button>
+  </div>
+  <div class="gallery">
+    <div class="banner">
+      <h1>Galerie d'art</h1>
+      <p>Explorez des œuvres uniques, inspirées par la créativité sans limites.</p>
+    </div>
+    <div class="gallery-item" *ngFor="let image of images">
+      <img [src]="image.url" [alt]="image.title" />
+      <div class="gallery-item-info">
+        <h3>{{ image.title }}</h3>
+      </div>
+    </div>
+  </div>
+  <div class="about-section">
+    <h2>À propos de l'artiste</h2>
+    <p>Bienvenue dans mon univers artistique !
+      Chaque œuvre ici présente est une exploration des couleurs,
+      des formes et des émotions.
+      J'espère que vous serez aussi inspiré que je l'ai été en les créant.</p>
+  </div>
+</div>
