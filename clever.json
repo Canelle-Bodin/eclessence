@@ -1,7 +1,7 @@
 {
   "deploy": {
     "static": {
-      "root": "dist/eclessence"
+      "root": "dist/eclessence/browser"
     }
   }
 }
