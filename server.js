@@ -1,8 +1,15 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
-const fs = require('fs'); // Pour gérer les erreurs de fichiers
+const fs = require('fs');
+const nodemailer = require('nodemailer');
+const bodyParser = require('body-parser');
 
 const app = express();
+
+// Middleware pour parser les requêtes JSON
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve les fichiers statiques de l'application Angular
 const staticPath = path.join(__dirname, 'dist/eclessence/browser');
@@ -19,6 +26,41 @@ app.get('/*', (req, res) => {
     } else {
       res.status(404).send('404: Page Not Found');
     }
+  });
+});
+
+// Configuration de Nodemailer pour Gmail
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+});
+
+// Endpoint pour envoyer un email
+app.post('/send-email', (req, res) => {
+  const { name, email, message } = req.body;
+
+  // Vérification des données reçues
+  if (!name || !email || !message) {
+    return res.status(400).send('Nom, email et message sont requis');
+  }
+
+  // Configuration de l'email à envoyer
+  const mailOptions = {
+    from: email,
+    to: process.env.EMAIL_USER,
+    subject: `Message de ${name}`,
+    text: message,
+  };
+
+  // Envoi de l'email
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      return res.status(500).send('Erreur lors de l\'envoi du message');
+    }
+    res.status(200).send('Message envoyé avec succès');
   });
 });
 
