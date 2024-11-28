@@ -13,6 +13,7 @@ app.get('/*', (req, res) => {
 
 // Le serveur écoute sur le port configuré par Clever Cloud ou 8080 par défaut
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
+console.log(`Listening on port ${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server is running on port ${PORT}`);
 });
