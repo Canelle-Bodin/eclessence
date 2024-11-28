@@ -5,6 +5,9 @@
       "npm install",
       "ng build --configuration production",
       "node server.js"
-    ]
+    ],
+    "env": {
+      "PORT": 8080
+    }
   }
 }
