@@ -14,16 +14,14 @@ RUN npm run build
 # Étape 2 : Image de production pour l'application Express
 FROM node:20
 
-WORKDIR /app
-
 # Copier les fichiers générés par la construction Angular (répertoire dist)
-COPY --from=build /app/dist/eclessence/browser /app/dist/eclessence/browser
+COPY --from=build /dist/eclessence/browser /dist/eclessence/browser
 
 # Copier uniquement les fichiers nécessaires pour le backend Express
 COPY package.json package-lock.json ./
 
 # Installer uniquement les dépendances nécessaires pour la production (backend Express)
-RUN npm install --production
+RUN npm install --omit=dev
 
 # Exposer le port 8080 pour l'application
 EXPOSE 8080
