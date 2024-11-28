@@ -4,7 +4,7 @@ FROM node:20 AS build
 WORKDIR /app
 
 # Copie des fichiers de dépendances
-COPY ../package.json package-lock.json ./
+COPY package.json package-lock.json ./
 RUN npm install
 
 # Copie du code source Angular et exécution du build de production
