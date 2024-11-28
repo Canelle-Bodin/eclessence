@@ -14,8 +14,10 @@ RUN npm run build
 # Étape 2 : Image de production pour l'application Express
 FROM node:20
 
+WORKDIR /app
+
 # Copier les fichiers générés par la construction Angular (répertoire dist)
-COPY --from=build /dist/eclessence/browser /dist/eclessence/browser
+COPY --from=build /app/dist/eclessence/browser /app/dist/eclessence/browser
 
 # Copier uniquement les fichiers nécessaires pour le backend Express
 COPY package.json package-lock.json ./
