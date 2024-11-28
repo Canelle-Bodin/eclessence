@@ -19,7 +19,8 @@ WORKDIR /app
 # Copier les fichiers générés par la construction Angular (répertoire dist)
 COPY --from=build /app/dist/eclessence/browser /app/dist/eclessence/browser
 
-# Copier uniquement les fichiers nécessaires pour le backend Express
+# Copier les fichiers backend (notamment server.js et package.json)
+COPY server.js ./
 COPY package.json package-lock.json ./
 
 # Installer uniquement les dépendances nécessaires pour la production (backend Express)
