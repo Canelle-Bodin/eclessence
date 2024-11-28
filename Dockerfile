@@ -9,7 +9,7 @@ RUN npm install
 
 # Copier le code source Angular et exécuter la construction de production
 COPY . ./
-RUN npm run build --configuration production
+RUN npm run build
 
 # Étape 2 : Image de production pour l'application Express
 FROM node:20
