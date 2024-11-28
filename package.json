@@ -2,7 +2,7 @@
   "name": "eclessence",
   "version": "0.0.0",
   "scripts": {
-    "start": "node server.js",
+    "start": "npm run build && node server.js",
     "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
