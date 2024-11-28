@@ -12,6 +12,8 @@ import { HeaderComponent } from '../header/header.component';
 })
 export class ContactComponent {
   contactForm: FormGroup;
+  errorMessage: string | null = null;
+  successMessage: string | null = null;
 
   constructor(private fb: FormBuilder, private contactService: ContactService) {
     this.contactForm = this.fb.group({
@@ -26,13 +28,21 @@ export class ContactComponent {
       const formData = this.contactForm.value;
       this.contactService.sendEmail(formData).subscribe({
         next: (response) => {
-          console.log('Email envoyé avec succès:', response);
-          alert('Merci pour votre message !');
-          this.contactForm.reset();
+          if (response.success) {
+            console.log('Email envoyé avec succès:', response);
+            this.successMessage = 'Merci pour votre message !';
+            this.errorMessage = null;
+            this.contactForm.reset();
+          } else {
+            console.error('Erreur dans la réponse:', response.message);
+            this.successMessage = null; 
+            this.errorMessage = response.message || 'Une erreur est survenue.';
+          }
         },
         error: (error) => {
           console.error('Erreur lors de l\'envoi de l\'email:', error);
-          alert('Une erreur est survenue lors de l\'envoi du message.');
+          this.successMessage = null;
+          this.errorMessage = 'Une erreur est survenue lors de l\'envoi du message.';
         }
       });
     }

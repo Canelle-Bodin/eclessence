@@ -58,9 +58,11 @@ app.post('/send-email', (req, res) => {
   // Envoi de l'email
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      return res.status(500).send('Erreur lors de l\'envoi du message');
+      console.error('Erreur lors de l\'envoi du message:', error);
+      return res.status(500).json({ success: false, message: 'Erreur lors de l\'envoi du message' });
     }
-    return res.status(200).send('Message envoyé avec succès');
+    console.log('Email envoyé:', info.response);
+    return res.status(200).json({ success: true, message: 'Message envoyé avec succès' });
   });
 });
 
