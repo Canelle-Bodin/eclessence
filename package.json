@@ -2,6 +2,7 @@
   "name": "eclessence",
   "version": "0.0.0",
   "scripts": {
+    "prebuild": "rimraf dist",
     "start": "node server.js",
     "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
