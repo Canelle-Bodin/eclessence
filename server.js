@@ -2,19 +2,17 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-// Définir le dossier de construction Angular
-const distDir = path.join(__dirname, 'dist/eclessence/browser');
+// Point vers le dossier où Angular compile les fichiers
+const distFolder = path.join(__dirname, 'dist/eclessence/browser');
+app.use(express.static(distFolder));
 
-// Servir les fichiers statiques générés par Angular
-app.use(express.static(distDir));
-
-// Pour toute requête, renvoyer le fichier index.html (single-page application)
-app.get('*', (req, res) => {
-  res.sendFile(path.join(distDir, 'index.html'));
+// Redirige toutes les requêtes vers index.html
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(distFolder, 'index.html'));
 });
 
-// Le port sur lequel le serveur doit écouter
+// Définir le port que Clever Cloud utilise (port 8080)
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
+  console.log(`Server listening on port ${port}`);
 });
