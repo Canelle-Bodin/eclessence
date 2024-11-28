@@ -1,12 +1,10 @@
 {
-  "version": "1",
+  "version": 2,
   "deploy": {
-    "predeploy": [
-      "npm install",
-      "npm run build --prod"
-    ],
-    "start": "npm run serve"
+    "build": "npm install && npm run prod",
+    "start": "http-server ./dist/eclessence/browser -p 8080"
   },
+  "name": "eclessence-angular",
   "env": {
     "NODE_ENV": "production"
   }
