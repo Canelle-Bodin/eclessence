@@ -1,6 +1,18 @@
 .container-contact {
   font-family: 'Arial', sans-serif;
 
+  .success-message {
+    color: var(--blue);
+    font-weight: bold;
+    margin-top: 15px;
+  }
+
+  .error-message {
+    color: var(--pink);
+    font-weight: bold;
+    margin-top: 15px;
+  }
+
   .contract-us {
     background: linear-gradient(to right, var(--blue), var(--pink));
     color: var(--white);

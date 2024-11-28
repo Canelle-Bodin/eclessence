@@ -9,6 +9,14 @@
     </p>
   </div>
 
+  <div *ngIf="successMessage" class="success-message">
+    {{ successMessage }}
+  </div>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
   <div class="form-container">
     <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
       <div class="form-group">

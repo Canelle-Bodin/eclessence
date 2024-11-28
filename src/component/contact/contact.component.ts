@@ -35,7 +35,7 @@ export class ContactComponent {
             this.contactForm.reset();
           } else {
             console.error('Erreur dans la réponse:', response.message);
-            this.successMessage = null; 
+            this.successMessage = null;
             this.errorMessage = response.message || 'Une erreur est survenue.';
           }
         },
