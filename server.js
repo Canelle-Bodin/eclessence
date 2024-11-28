@@ -60,7 +60,7 @@ app.post('/send-email', (req, res) => {
     if (error) {
       return res.status(500).send('Erreur lors de l\'envoi du message');
     }
-    res.status(200).send('Message envoyé avec succès');
+    return res.status(200).send('Message envoyé avec succès');
   });
 });
 

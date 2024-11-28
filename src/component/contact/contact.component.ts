@@ -27,7 +27,7 @@ export class ContactComponent {
       this.contactService.sendEmail(formData).subscribe({
         next: (response) => {
           console.log('Email envoyé avec succès:', response);
-          alert('Merci pour votre message !!');
+          alert('Merci pour votre message !');
           this.contactForm.reset();
         },
         error: (error) => {
