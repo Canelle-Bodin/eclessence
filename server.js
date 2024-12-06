@@ -49,10 +49,11 @@ app.post('/send-email', (req, res) => {
 
   // Configuration de l'email à envoyer
   const mailOptions = {
-    from: email,
+    from: process.env.EMAIL_USER,
     to: process.env.EMAIL_USER,
+    replyTo: email,
     subject: `Message de ${name}`,
-    text: message,
+    text: `Vous avez reçu un message de ${name} (${email}):\n\n${message}`,
   };
 
   // Envoi de l'email

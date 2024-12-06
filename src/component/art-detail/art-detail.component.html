@@ -1,0 +1,10 @@
+<app-header></app-header>
+<div class="art-detail">
+  <img [src]="image?.url" [alt]="image?.title" class="art-image" />
+  <h2 class="art-title">{{ image?.title }}</h2>
+  <p class="art-dimensions"><strong>Dimensions :</strong> {{ image?.dimensions }}</p>
+  <p class="art-date"><strong>Date de création :</strong> {{ image?.creationDate }}</p>
+  <p class="art-technique"><strong>Technique :</strong> {{ image?.technique }}</p>
+  <p class="art-description">{{ image?.description }}</p>
+  <a routerLink="/gallery" class="back-button">Retour à la galerie</a>
+</div>

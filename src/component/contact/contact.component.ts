@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ContactService } from './contact.service';
 import { HeaderComponent } from '../header/header.component';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  imports: [ReactiveFormsModule, HeaderComponent],
+  imports: [ReactiveFormsModule, HeaderComponent, NgIf],
   standalone: true,
   styleUrls: ['./contact.component.scss'],
 })
@@ -19,11 +20,17 @@ export class ContactComponent {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      message: ['', Validators.required]
+      message: ['', Validators.required],
+      hiddenField: ['']
     });
   }
 
   onSubmit() {
+    if (this.contactForm.get('hiddenField')?.value) {
+      this.errorMessage = 'Une activité suspecte a été détectée.';
+      return;
+    }
+
     if (this.contactForm.valid) {
       const formData = this.contactForm.value;
       this.contactService.sendEmail(formData).subscribe({
