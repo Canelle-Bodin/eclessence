@@ -42,8 +42,8 @@
   color: var(--beige);
   cursor: pointer;
   position: absolute;
-  top: 95%;
-  right: 0;
+  top: 0;
+  right: auto;
   border-radius: 50%;
   padding: 8px;
   z-index: 10;
@@ -95,8 +95,6 @@
   .zoom-icon {
     font-size: 1.5rem;
     padding: 5px;
-    top: 90%;
-    right: 0;
   }
 
   .art-image {
