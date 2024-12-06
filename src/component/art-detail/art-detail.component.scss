@@ -9,36 +9,11 @@
   font-family: 'Arial', sans-serif;
 }
 
-.art-image {
-  max-width: 50%;
-  height: auto;
-  margin: 0 auto 20px;
-  display: block;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.art-title {
-  font-size: 2.5rem;
-  color: var(--blue);
-  font-weight: bold;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.art-dimensions,
-.art-date,
-.art-technique {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  color: var(--black);
-}
-
-.art-description {
-  font-size: 1.2rem;
-  color: var(--black);
-  line-height: 1.6;
-  margin-bottom: 30px;
+.image-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 100%;
 }
 
 .back-button {
@@ -54,36 +29,77 @@
   text-align: center;
 }
 
-.back-button:hover {
-  background-color: var(--btn-hover-color);
+.art-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: block;
 }
 
-.art-dimensions strong,
-.art-date strong,
-.art-technique strong {
-  color: var(--accent-color);
+.zoom-icon {
+  font-size: 2rem;
+  color: var(--beige);
+  cursor: pointer;
+  position: absolute;
+  top: 95%;
+  right: 0;
+  border-radius: 50%;
+  padding: 8px;
+  z-index: 10;
+  transition: transform 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .art-detail {
-    padding: 15px;
-  }
+.zoom-icon:hover {
+  transform: scale(1.2);
+}
 
-  .art-title {
-    font-size: 2rem;
-  }
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  overflow: auto;
+}
 
-  .art-dimensions,
-  .art-date,
-  .art-technique {
-    font-size: 1rem;
-  }
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
 
-  .art-description {
-    font-size: 1rem;
+.modal-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+@media (max-width: 665px) {
+  .zoom-icon {
+    font-size: 1.5rem;
+    padding: 5px;
+    top: 94%;
+    right: 0;
   }
 
   .art-image {
-    max-width: 100%;
+    width: 100%;
   }
 }

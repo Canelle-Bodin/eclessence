@@ -1,0 +1,74 @@
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: linear-gradient(135deg, var(--purple), var(--pink));
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  color: var(--white);
+  font-family: 'Arial', sans-serif;
+
+  h1 {
+    color: var(--white);
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin: 10px 0;
+    max-width: 700px;
+    text-align: center;
+  }
+
+  .about-description {
+    color: var(--beige);
+    font-size: 1.1em;
+    margin-top: 20px;
+  }
+
+  .additional-info {
+    color: var(--white);
+    font-size: 1.1em;
+    margin-top: 20px;
+    font-style: italic;
+  }
+
+  .thank-you-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: var(--black);
+    border-radius: 8px;
+    width: 80%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+    h2 {
+      color: var(--pink);
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: var(--beige);
+      font-size: 1.1em;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .serli-link {
+      color: var(--blue);
+      text-decoration: underline;
+      margin-top: 10px;
+      display: inline-block;
+
+      &:hover {
+        color: var(--accent-color);
+      }
+    }
+  }
+}

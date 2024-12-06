@@ -1,6 +1,7 @@
 import {ActivatedRoute, RouterLink} from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import {HeaderComponent} from '../header/header.component';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-art-detail',
@@ -8,12 +9,14 @@ import {HeaderComponent} from '../header/header.component';
   standalone: true,
   imports: [
     RouterLink,
-    HeaderComponent
+    HeaderComponent,
+    NgIf
   ],
   styleUrls: ['./art-detail.component.scss']
 })
 export class ArtDetailComponent implements OnInit {
   image: any;
+  modalOpen = false;
 
   images = [
     { id: 1,
@@ -84,5 +87,13 @@ export class ArtDetailComponent implements OnInit {
       const numericId = Number(id);
       this.image = this.images.find(img => img.id === numericId);
     }
+  }
+
+  openModal() {
+    this.modalOpen = true;
+  }
+
+  closeModal() {
+    this.modalOpen = false;
   }
 }

@@ -1,0 +1,25 @@
+.painting-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, var(--purple), var(--pink)); /* Dégradé dynamique */
+  color: var(--white);
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+
+  h1 {
+    font-size: 3em;
+    color: var(--white);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  p {
+    font-size: 1.2em;
+    color: var(--beige);
+    margin-top: 30px;
+    max-width: 600px;
+  }
+}

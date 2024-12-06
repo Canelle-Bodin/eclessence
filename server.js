@@ -17,17 +17,16 @@ app.use(express.static(staticPath));
 
 // Redirige toute requête vers l'index.html de l'application Angular
 app.get('/*', (req, res) => {
-  const indexPath = path.join(staticPath, 'index.html');
-
-  // Vérifie si le fichier existe avant de le servir
-  fs.exists(indexPath, (exists) => {
-    if (exists) {
-      res.sendFile(indexPath);
-    } else {
-      res.status(404).send('404: Page Not Found');
-    }
-  });
+  res.sendFile(path.join(staticPath, 'index.html'));
 });
+
+app.use(express.static('public', {
+  setHeaders: (res, path) => {
+    if (path.endsWith('.js')) {
+      res.set('Content-Type', 'application/javascript');
+    }
+  }
+}));
 
 // Configuration de Nodemailer pour Gmail
 const transporter = nodemailer.createTransport({

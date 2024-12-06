@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="about-container">
+  <h1>{{ title }}</h1>
+  <p>{{ description }}</p>
+  <p class="about-description">{{ additionalInfo }}</p>
+
+  <!-- Image de fluid art -->
+  <img src="assets/tableau1.jpg" alt="Fluid Art Example" style="width: 50%; border-radius: 8px; margin-top: 20px;">
+
+  <a routerLink="/gallery" style="color: #fff; text-decoration: underline; margin-top: 20px;">Voir la galerie de créations</a>
+
+  <!-- Section de remerciements -->
+  <div class="thank-you-section">
+    <h2>{{ thankYouTitle }}</h2>
+    <p>{{ thankYouText }} <a [href]="serliWebsite" target="_blank" class="serli-link">Visitez le site de SERLI</a></p>
+  </div>
+</div>
