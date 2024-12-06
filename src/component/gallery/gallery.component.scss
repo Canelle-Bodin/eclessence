@@ -5,6 +5,7 @@
   background: var(--beige);
   padding: 0;
   color: var(--black);
+  overflow: hidden;
 }
 
 app-header {
@@ -40,16 +41,17 @@ app-header {
   gap: 20px;
   width: 100%;
   max-width: 1200px;
-  padding: 20px;
+  padding: 5px;
 }
 
 .gallery-item {
   position: relative;
   overflow: hidden;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background: var(--white);
+  margin: 5px;
 }
 
 .gallery-item:hover {
@@ -92,7 +94,8 @@ app-header {
   margin-top: 40px;
   padding: 20px;
   background: var(--white);
-  border-radius: 10px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
