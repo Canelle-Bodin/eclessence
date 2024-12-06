@@ -17,7 +17,7 @@ import {RouterLink} from '@angular/router';
 export class GalleryComponent {
   images = [
     { id: 1, url: 'assets/tableau1.jpg', title: 'Bleu Éternel', category: 'moyen' },
-    { id: 2,url: 'assets/tableau2.jpg', title: 'Grains d’éternité', category: 'texture' },
+    { id: 2,url: 'assets/tableau2.jpg', title: 'Grains d’éternité', category: 'moyen' },
     { id: 3,url: 'assets/tableau3.jpg', title: 'Sous la surface', category: 'grand' },
     { id: 4,url: 'assets/tableau4.jpg', title: 'Émergence chromatique', category: 'petit' },
     { id: 5,url: 'assets/tableau5.jpg', title: 'Entre deux mondes', category: 'grand' },
