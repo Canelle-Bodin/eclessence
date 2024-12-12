@@ -9,23 +9,30 @@
   font-family: 'Arial', sans-serif;
 }
 
-.image-container {
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  display: inline-block;
-  width: 100%;
-  max-width: 100%;
+  margin-bottom: 20px;
 }
 
-.back-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: var(--btn-color);
-  color: var(--white);
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+.carousel-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: var(--black);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.carousel-btn:hover {
+  transform: scale(1.2);
+}
+
+.image-container {
+  width: 100%;
+  max-width: 70%;
   text-align: center;
 }
 
@@ -34,24 +41,6 @@
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: block;
-}
-
-.zoom-icon {
-  font-size: 2rem;
-  color: var(--beige);
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  right: auto;
-  border-radius: 50%;
-  padding: 8px;
-  z-index: 10;
-  transition: transform 0.3s ease;
-}
-
-.zoom-icon:hover {
-  transform: scale(1.2);
 }
 
 .modal {
@@ -77,7 +66,19 @@
 .modal-image {
   width: 100%;
   height: auto;
-  display: block;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--btn-color);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  text-align: center;
 }
 
 .close-btn {
@@ -92,12 +93,7 @@
 }
 
 @media (max-width: 665px) {
-  .zoom-icon {
+  .carousel-btn {
     font-size: 1.5rem;
-    padding: 5px;
-  }
-
-  .art-image {
-    width: 100%;
   }
 }

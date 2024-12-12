@@ -21,7 +21,10 @@ export class GalleryComponent {
     { id: 3,url: 'assets/tableau3.jpg', title: 'Sous la surface', category: 'grand' },
     { id: 4,url: 'assets/tableau4.jpg', title: 'Émergence chromatique', category: 'petit' },
     { id: 5,url: 'assets/tableau5.jpg', title: 'Entre deux mondes', category: 'grand' },
-    { id: 6,url: 'assets/tableau6.jpg', title: 'Poussières d’étoiles', category: 'grand' }
+    { id: 6,url: 'assets/tableau6.jpg', title: 'Poussières d’étoiles', category: 'grand' },
+    { id: 7,url: 'assets/tableau7.2.jpg', title: 'Lumière Émergente', category: 'petit' },
+    { id: 8,url: 'assets/tableau8.2.jpg', title: 'Flammes Aquatiques', category: 'petit' },
+    { id: 9,url: 'assets/tableau9.2.jpg', title: 'Ondes Pacifiques', category: 'petit' }
   ];
 
   originalImages = this.images;

@@ -1,9 +1,18 @@
 <app-header></app-header>
 <div class="art-detail">
-  <div class="image-container">
-    <img [src]="image?.url" [alt]="image?.title" class="art-image" (click)="openModal()">
-    <i class="fas fa-search zoom-icon" (click)="openModal()"></i>
+  <div class="carousel">
+    <button class="carousel-btn prev-btn" (click)="prevGalleryImage()">&#x276E;</button>
+    <div class="image-container">
+      <img
+        [src]="image?.gallery[currentGalleryIndex]"
+        [alt]="image?.title"
+        class="art-image"
+        (click)="openModal()"
+      />
+    </div>
+    <button class="carousel-btn next-btn" (click)="nextGalleryImage()">&#x276F;</button>
   </div>
+
   <h2 class="art-title">{{ image?.title }}</h2>
   <p class="art-dimensions"><strong>Dimensions :</strong> {{ image?.dimensions }}</p>
   <p class="art-date"><strong>Date de création :</strong> {{ image?.creationDate }}</p>
@@ -12,10 +21,14 @@
   <a routerLink="/gallery" class="back-button">Retour à la galerie</a>
 </div>
 
-<!-- Modal pour image agrandie -->
+<!-- Modal pour l'image agrandie -->
 <div *ngIf="modalOpen" class="modal" (click)="closeModal()">
   <div class="modal-content" (click)="$event.stopPropagation()">
-    <img [src]="image?.url" alt="Image agrandie" class="modal-image">
-    <span class="close-btn" (click)="closeModal()">×</span>
+    <img
+      [src]="image?.gallery[currentGalleryIndex]"
+      [alt]="image?.title"
+      class="modal-image"
+    />
+    <span class="close-btn" (click)="closeModal()">&times;</span>
   </div>
 </div>
