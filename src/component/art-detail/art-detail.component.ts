@@ -83,7 +83,7 @@ export class ArtDetailComponent implements OnInit {
     { id: 7,
       title: 'Lumière Émergente',
       category: 'petit',
-      description: '"Lumière Émergente" capture l\'instant où la lumière jaillit des ténèbres, symbolisant l\'espoir et la renaissance dans un contraste saisissant.',
+      description: '"Capture de l\'instant où la lumière jaillit des ténèbres, symbolisant l\'espoir et la renaissance dans un contraste saisissant.',
       dimensions: '30 x 24 cm',
       creationDate: 'Décembre 2024',
       technique: 'Acrylique sur toile.',

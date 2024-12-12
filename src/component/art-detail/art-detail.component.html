@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="art-detail">
   <div class="carousel">
-    <button class="carousel-btn prev-btn" (click)="prevGalleryImage()">&#x276E;</button>
+    <button *ngIf="image?.gallery.length > 1" class="carousel-btn prev-btn" (click)="prevGalleryImage()">&#x276E;</button>
     <div class="image-container">
       <img
         [src]="image?.gallery[currentGalleryIndex]"
@@ -10,7 +10,7 @@
         (click)="openModal()"
       />
     </div>
-    <button class="carousel-btn next-btn" (click)="nextGalleryImage()">&#x276F;</button>
+    <button *ngIf="image?.gallery.length > 1" class="carousel-btn next-btn" (click)="nextGalleryImage()">&#x276F;</button>
   </div>
 
   <h2 class="art-title">{{ image?.title }}</h2>
